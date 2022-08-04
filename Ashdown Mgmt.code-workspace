@@ -2,6 +2,10 @@
 	"folders": [
 		{
 			"path": "."
+		},
+		{
+			"name": "Ashdown Mgmt",
+			"path": "..\\Ashdown Mgmt DB\\Ashdown Mgmt"
 		}
 	],
 	"settings": {

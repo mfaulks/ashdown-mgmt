@@ -6,14 +6,21 @@
       "direction": "in",
       "name": "req",
       "methods": [
-        "get",
-        "post"
+        "get"
       ]
     },
     {
       "type": "http",
       "direction": "out",
       "name": "res"
+    },
+    {
+      "name": "who",
+      "type": "sql",
+      "direction": "in",
+      "commandText": "SELECT * FROM [dbo].[Who]",
+      "commandType": "Text",
+      "connectionStringSetting": "SqlConnectionString"
     }
   ]
 }

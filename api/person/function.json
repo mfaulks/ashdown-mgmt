@@ -1,0 +1,28 @@
+{
+  "bindings": [
+    {
+      "authLevel": "anonymous",
+      "type": "httpTrigger",
+      "direction": "in",
+      "name": "req",
+      "methods": [
+        "get"
+      ],
+      "route": "data/person/{id:int}"
+    },
+    {
+      "type": "http",
+      "direction": "out",
+      "name": "res"
+    },
+    {
+      "name": "person",
+      "type": "sql",
+      "direction": "in",
+      "commandText": "SELECT [Id], [firstName], [Surname] FROM [dbo].[person] where Id = @Id",
+      "commandType": "Text",
+      "parameters": "@Id={id}",
+      "connectionStringSetting": "SqlConnectionString"
+    }
+  ]
+}

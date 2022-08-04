@@ -1,16 +1,31 @@
-import React, { useState, useEffect} from 'react';
+import React from 'react';
+import Search from './search';
 
-function App() {
-  const [data, setData] = useState('');
+class App extends React.Component{
+  constructor(props){
+    super(props);
 
-  useEffect(() => {
-    (async function () {
-      const { text } = await( await fetch(`/api/message`)).json();
-      setData(text);
-    })();
-  });
+    this.state = {
+      data: []
+    };
 
-  return <div>{data}</div>;
+    this.update();
+  }
+
+  async update(){
+    const who = await( await fetch(`/api/who`)).json();
+    this.setState({data: who});
+  }
+
+  render(){
+    return <div>
+      {this.state.data.map(
+        (item, id) => 
+        <div key={id}>{item.Id} {item.Type} {item.Name}</div>
+      )}
+      <Search />
+      </div>;
+  }
 }
 
 export default App;
