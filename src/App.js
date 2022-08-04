@@ -19,6 +19,7 @@ class App extends React.Component{
 
   render(){
     return <div>
+      Development
       {this.state.data.map(
         (item, id) => 
         <div key={id}>{item.Id} {item.Type} {item.Name}</div>
